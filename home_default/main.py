@@ -38,7 +38,7 @@ max_name = 8
 
 # Background stuff
 init()
-ugfx.clear(ugfx.html_color(0x800080))
+ugfx.clear(ugfx.html_color(0xFFFFFF))
 
 # Colour stuff
 style = ugfx.Style()
@@ -72,7 +72,7 @@ ugfx.Label(0, ugfx.height() - name_height, ugfx.width(), name_height, name_setti
 
 
 # Draw for wearer to see
-ugfx.orientation(270)
+# ugfx.orientation(270)
 # Title
 ugfx.set_default_font(ugfx.FONT_TITLE)
 ugfx.Label(0, ugfx.height() - info_height * 2, ugfx.width(), info_height, "TiLDA Mk4", justification=ugfx.Label.CENTER)
