@@ -59,7 +59,7 @@ ugfx.display_image(
 ugfx.orientation(90)
 # Draw introduction
 ugfx.set_default_font(ugfx.FONT_TITLE)
-ugfx.Label(0, ugfx.height() - name_height - intro_height + 2, ugfx.width(), intro_height, intro_text, justification=ugfx.Label.CENTER)
+ugfx.Label(0, ugfx.height() - name_height - intro_height + 4, ugfx.width(), intro_height, intro_text, justification=ugfx.Label.CENTER)
 # Process name
 name_setting = name("Set your name in the settings app")
 if len(name_setting) <= max_name:
@@ -80,7 +80,7 @@ ugfx.Label(0, 0, ugfx.width(), info_height, "TiLDA Mk4", justification=ugfx.Labe
 ugfx.Label(0, info_height, ugfx.width(), info_height, "EMF 2018", justification=ugfx.Label.CENTER)
 
 ugfx.set_default_font(ugfx.FONT_SMALL)
-status = ugfx.Label(0, info_height + status_height, ugfx.width(), status_height, "", justification=ugfx.Label.CENTER)
+status = ugfx.Label(0, info_height + status_height + 4, ugfx.width(), status_height, "", justification=ugfx.Label.CENTER)
 
 # update loop
 while True:
