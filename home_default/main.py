@@ -42,8 +42,8 @@ ugfx.clear(ugfx.html_color(0x800080))
 
 # Colour stuff
 style = ugfx.Style()
-style.set_enabled([ugfx.WHITE, ugfx.html_color(0x800080), ugfx.html_color(0x800080), ugfx.html_color(0x800080)])
-style.set_background(ugfx.html_color(0x800080))
+style.set_enabled([ugfx.BLUE, ugfx.html_color(0x800080), ugfx.html_color(0x800080), ugfx.html_color(0x800080)])
+style.set_background(ugfx.html_color(0xFFFFFF))
 ugfx.set_default_style(style)
 
 # Logo stuff
