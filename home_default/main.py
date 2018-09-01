@@ -8,7 +8,7 @@ newly activated or reset.
 ___name___         = "Homescreen (Default)"
 ___license___      = "MIT"
 ___categories___   = ["Homescreens"]
-___dependencies___ = ["homescreen", "shared/logo.png", "shared/sponsors.png"]
+___dependencies___ = ["homescreen", "shared/me.png", "shared/sponsors.png"]
 ___launchable___   = False
 ___bootstrapped___ = True
 
@@ -29,9 +29,9 @@ intro_text = "Hi! I'm"
 name_height = 60
 status_height = 20
 info_height = 30
-logo_path = "shared/logo.png"
+logo_path = "shared/me.png"
 logo_height = 150
-logo_width = 56
+logo_width = 150
 
 # Maximum length of name before downscaling
 max_name = 8
@@ -77,7 +77,7 @@ ugfx.orientation(270)
 ugfx.set_default_font(ugfx.FONT_TITLE)
 ugfx.Label(0, ugfx.height() - info_height * 2, ugfx.width(), info_height, "TiLDA Mk4", justification=ugfx.Label.CENTER)
 # info
-ugfx.Label(0, ugfx.height() - info_height, ugfx.width(), info_height, "Press MENU", justification=ugfx.Label.CENTER)
+ugfx.Label(0, ugfx.height() - info_height, ugfx.width(), info_height, "EMF 2018", justification=ugfx.Label.CENTER)
 
 ugfx.set_default_font(ugfx.FONT_SMALL)
 status = ugfx.Label(0, ugfx.height() - info_height * 2 - status_height, ugfx.width(), status_height, "", justification=ugfx.Label.CENTER)
