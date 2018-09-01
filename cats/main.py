@@ -9,7 +9,7 @@ ___dependencies___ = ["sleep", "app", "http"]
 ___categories___   = ["EMF"]
 
 import ugfx
-from http import *
+from app import *
 import time
 
 
