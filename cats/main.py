@@ -5,7 +5,7 @@ This app retrieves cat or dog images from an API and shows them.
 
 ___name___         = "Cats"
 ___license___      = "MIT"
-___dependencies___ = ["sleep", "app", "http"]
+___dependencies___ = ["app", "sleep", "http", "ugfx_helper"]
 ___categories___   = ["EMF"]
 
 import ugfx, http, app, sleep
