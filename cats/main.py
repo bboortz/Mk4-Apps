@@ -8,9 +8,7 @@ ___license___      = "MIT"
 ___dependencies___ = ["sleep", "app", "http"]
 ___categories___   = ["EMF"]
 
-import ugfx
-from app import *
-import time
+import ugfx, http, app, sleep
 
 
 # Padding for name
