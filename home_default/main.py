@@ -8,7 +8,7 @@ newly activated or reset.
 ___name___         = "Homescreen (Default)"
 ___license___      = "MIT"
 ___categories___   = ["Homescreens"]
-___dependencies___ = ["homescreen", "shared/logo.png", "shared/sponsors.png"]
+___dependencies___ = ["homescreen", "shared/me.png", "shared/sponsors.png"]
 ___launchable___   = False
 ___bootstrapped___ = True
 
@@ -29,7 +29,7 @@ intro_text = "Hi! I'm"
 name_height = 60
 status_height = 20
 info_height = 30
-logo_path = "shared/logo.png"
+logo_path = "shared/me.png"
 logo_height = 150
 logo_width = 56
 
