@@ -80,7 +80,7 @@ ugfx.Label(0, 0, ugfx.width(), info_height, "TiLDA Mk4", justification=ugfx.Labe
 ugfx.Label(0, info_height, ugfx.width(), info_height, "EMF 2018", justification=ugfx.Label.CENTER)
 
 ugfx.set_default_font(ugfx.FONT_SMALL)
-status = ugfx.Label(0, info_height + status_height + 4, ugfx.width(), status_height, "", justification=ugfx.Label.CENTER)
+status = ugfx.Label(0, info_height + status_height + 6, ugfx.width(), status_height, "", justification=ugfx.Label.CENTER)
 
 # update loop
 while True:
