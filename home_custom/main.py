@@ -1,41 +1,39 @@
 """Your custom homescreen
 
 This is a customable homescreen for the Tilda Mk4.
-"""
 
-#
-# How to use:
-# 1. store an 150x150px image at shared/me.png"
-# 2. install this app
-#
+ How to use:
+ 1. store an 150x150px image at shared/me.png"
+ 2. install this app
+"""
 
 ___name___         = "Homescreen (Custom)"
 ___license___      = "MIT"
 ___categories___   = ["Homescreens"]
-___dependencies___ = ["homescreen", "shared/me.png", "shared/sponsors.png"]
-___launchable___   = True         # should be False for a homescreen
-___bootstrapped___ = True
+___dependencies___ = ["homescreen", "ospath"]
+___launchable___   = False        # should be False for a homescreen
+___bootstrapped___ = False
 
 import ugfx
 from homescreen import *
-import time
+import time, ospath, os
 from tilda import Buttons
 
 
 # some variables
-intro_height = 30             # introduction height
-intro_text = "Hi! I'm"        # introduction text
-name_height = 60              # height of name
-status_height = 20            # height of status text
-info_height = 30              # height of info text
-info_text = "EMF 2018"        # info text
-logo_path = "shared/me.png"   # logo path
-logo_height = 150             # logo height
-logo_width = 150              # logo width
-max_name = 8                  # Maximum length of name before downscaling
-background_color = 0xFFFFFF   # background color
-text_color = ugfx.BLUE        # text color
-title_text = "TiLDA Mk4"      # title text
+intro_height = 30                                # introduction height
+intro_text = "Hi! I'm"                           # introduction text
+name_height = 60                                 # height of name
+status_height = 20                               # height of status text
+info_height = 30                                 # height of info text
+info_text = "EMF 2018"                           # info text
+logo_path = "home_custom/me.png"                 # logo path
+logo_height = 150                                # logo height
+logo_width = 150                                 # logo width
+max_name = 8                                     # Maximum length of name before downscaling
+bg_color_setting = background_color(0xFFFFFF)    # background color
+text_color_setting = text_color(ugfx.BLUE)       # text color
+title_text = "TiLDA Mk4"                         # title text
 
 
 # initialize the homescreen
@@ -43,21 +41,24 @@ init()
 
 
 # Set Background 
-ugfx.clear(ugfx.html_color(background_color))
+ugfx.clear(ugfx.html_color(bg_color_setting))
 
 # Set Colours
 style = ugfx.Style()
-style.set_enabled([text_color, ugfx.html_color(background_color), ugfx.html_color(background_color), ugfx.html_color(background_color)])
-style.set_background(ugfx.html_color(background_color))
+style.set_enabled([text_color_setting, ugfx.html_color(bg_color_setting), ugfx.html_color(bg_color_setting), ugfx.html_color(bg_color_setting)])
+style.set_background(ugfx.html_color(bg_color_setting))
 ugfx.set_default_style(style)
 
-# Draw logo
-ugfx.display_image(
-    int((ugfx.width() - logo_width) / 2),
-    int((ugfx.height() - logo_height) / 2),
-    logo_path
-)
-
+# Draw Logo
+if ospath.exists(logo_path):
+    # Draw logo
+    ugfx.display_image(
+        int((ugfx.width() - logo_width) / 2),
+        int((ugfx.height() - logo_height) / 2),
+        logo_path
+    )
+else:
+    ugfx.Label(0, int(round( ugfx.height() / 2 )), ugfx.width(), info_height, "Logo not found!", justification=ugfx.Label.CENTER)
 
 # Draw introduction
 ugfx.orientation(90)

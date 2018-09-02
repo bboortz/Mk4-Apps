@@ -37,6 +37,8 @@ def settings_main(state):
     return selection({
         "Homescreen Name": change_database_string("Set your name", "homescreen.name"),
         "Homescreen Callsign": change_database_string("Set your callsign", "homescreen.callsign"),
+        "Homescreen Text Color": change_database_string("Set your text color", "homescreen.text_color"),
+        "Homescreen Bg Color": change_database_string("Set your background color", "homescreen.background_color"),
         "Wifi": settings_wifi,
         "Startup app": settings_startup_app,
         "Badge Store": settings_badge_store

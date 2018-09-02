@@ -62,6 +62,12 @@ def name(default = None):
 def callsign(default = None):
     return database.get("homescreen.callsign", default)
 
+def text_color(default = None):
+    return database.get("homescreen.text_color", default)
+
+def background_color(default = None):
+    return database.get("homescreen.background_color", default)
+
 # Strength in %, None if unavailable
 def wifi_strength():
     return wifi.get_strength()
