@@ -1,12 +1,15 @@
 """Your custom homescreen
 
 This is a customable homescreen for the Tilda Mk4.
-How to use:
-1. store an 150x150px image at shared/me.png"
-2. install this app
 """
 
-___name___         = "Homescreen (My)"
+#
+# How to use:
+# 1. store an 150x150px image at shared/me.png"
+# 2. install this app
+#
+
+___name___         = "Homescreen (Custom)"
 ___license___      = "MIT"
 ___categories___   = ["Homescreens"]
 ___dependencies___ = ["homescreen", "shared/me.png", "shared/sponsors.png"]
@@ -25,7 +28,7 @@ intro_text = "Hi! I'm"        # introduction text
 name_height = 60              # height of name
 status_height = 20            # height of status text
 info_height = 30              # height of info text
-info_text = "EMF 2018"        # 
+info_text = "EMF 2018"        # info text
 logo_path = "shared/me.png"   # logo path
 logo_height = 150             # logo height
 logo_width = 150              # logo width
