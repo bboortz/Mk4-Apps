@@ -5,32 +5,33 @@ This app retrieves cat or dog images from an API and shows them.
 
 ___name___         = "Cats"
 ___license___      = "MIT"
-___dependencies___ = ["app", "sleep", "http", "ugfx_helper"]
+___dependencies___ = ["wifi", "http", "ugfx_helper", "sleep", "app"]
 ___categories___   = ["EMF"]
 
-import ugfx, http, app, sleep
+import ugfx_helper, os, wifi, ugfx, http, time, sleep, app
+from tilda import Buttons
 
+ugfx_helper.init()
+ugfx.clear()
 
-# Padding for name
-logo_height = 240
-logo_width = 320
+      
+image_api = "http://94.45.235.239:8888"
 
-# Maximum length of name before downscaling
-max_name = 8
+ugfx.text(5, 5, "Loading Image Url", ugfx.BLACK)
+ugfx.text(5, 10, "from %s ..." % image_api, ugfx.BLACK)
+try:
+    image_url = http.get(image_url).raise_for_status().text()
+    ugfx.text(5, 15, "Result: %s" % image_url, ugfx.BLACK)
+    #image = http.get("http://s3.amazonaws.com/tilda-badge/sponsors/screen.png").raise_for_status().content
+    #r = http.get("http://94.45.235.239:8888") 
+    #ugfx.display_image(0,0,bytearray(image))
+except:
+    ugfx.clear()
+    ugfx.text(5, 5, "Couldn't download image", ugfx.BLACK)
 
-# Background stuff
-init()
-ugfx.clear(ugfx.html_color(0xFFFFFF))
+while (not Buttons.is_pressed(Buttons.BTN_A)) and (not Buttons.is_pressed(Buttons.BTN_B)) and (not Buttons.is_pressed(Buttons.BTN_Menu)):
+    sleep.wfi()
 
-# Retrieve Logo
-r = http.get("http://94.45.235.239:8888") 
-url = r.text()
-r = http.get(url) 
-http.download_to("cat.jpg")
+ugfx.clear()
+app.restart_to_default()
 
-# Logo stuff
-ugfx.display_image(
-    int((ugfx.width() - logo_width) / 2),
-    int((ugfx.height() - logo_height) / 2),
-    "cat.jpg" 
-)
